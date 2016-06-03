@@ -1,0 +1,61 @@
+True collaborative work
+as opposed to shoving work
+
+- 6/9 at 9:00AM in Congo I
+- client code growth (if it makes sense)
+- cross platform node.js Product Environment Shell
+- sharing back to citrus
+	case in point: react editor
+	1. our need
+	2. limits of kendo
+	3. our solution
+- sharing across teams
+	* Paylocity NPM server Jose Basilio
+	* Publishing components to internal server
+- sharing across frameworks
+	1. Separate code, one template/adapter x framework x component
+	2. Pick/create a template system/convention
+		1 x adapter per framework
+		all components expected to work
+		case in point: use of kendo components in 3 frameworks on supreme
+	* Build out in vanilla HTML/JavaScript
+- static analysis / CSS modules
+	components explicit about what classes they require
+	renaming classes should cause compile/bundle error
+	should say which class is missing explicitly
+	should only include classes that are actually needed
+	comparisons of different bundling approaches and their effects on speed (cache always fastest)
+- caveats, how this could affect QA process
+	positives/negatives
+	
+	
+One approach
+	Lime.code.js
+	Lime.angular-adapter.js
+	Lime.angular-template.html
+	
+	Lime.react-adapter.js
+	Lime.react-template.jsx
+
+	
+Citrus - example of static analysis identifying missing class name
+VERSION 1
+Citrus.css
+	foo-css-class
+	bar-css-class
+
+Sprocket.js
+	needs: foo-css-class
+	
+	
+VERSION 2
+Citrus.css
+	baz-css-class
+	bar-css-class
+Sprocket.js
+	needs: foo-css-class
+	
+-----------
+Citrus-Base.css
+Citrus-Sprocket.css
+
