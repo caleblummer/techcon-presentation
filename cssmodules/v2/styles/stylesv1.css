@@ -1,0 +1,9 @@
+.widgetSize {
+  width: 200px;
+  height: 200px;
+  font-size: 32px;
+  display: -ms-flexbox;
+  display: flex; }
+
+.alertBox {
+  background-color: grey; }

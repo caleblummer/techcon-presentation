@@ -1,0 +1,9 @@
+.widgetFont {
+  font-size: 12px;
+  display: -ms-flexbox;
+  display: flex; }
+
+.alertBox {
+  background-color: blue;
+  width: 100px;
+  height: 100px; }
