@@ -7,7 +7,6 @@ import transformClasses from 'postcss-transform-classes';
 import autoprefixer from 'autoprefixer';
 import webpack from 'webpack';
 import esCssModules from 'es-css-modules';
-import rimraf from 'rimraf';
 
 const keywordsThatAppearInBootstrap = {
   in: '$in',
@@ -43,29 +42,25 @@ gulp.task('compile-css', ['compile-sass'], () => {
 });
 
 gulp.task('compile-js', ['compile-css'], (done) => {
+  webpack({
+    entry: './src/app',
+    output: {
+      path: './dist',
+      filename: 'app-bundle.js',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel',
+        },
+      ],
+    },
+  }, err => {
+    done(err);
+  })
 
-  //First, clean the css files from styles, so webpack doesn't choke on them
-  rimraf('./styles/*.css', () => {
-    webpack({
-      entry: './src/app',
-      output: {
-        path: './dist',
-        filename: 'index.js',
-      },
-      module: {
-        loaders: [
-          {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel',
-          },
-        ],
-      },
-    }, err => {
-      done(err);
-    })
-
-  });
 });
 
 gulp.task('default', ['compile-js']);

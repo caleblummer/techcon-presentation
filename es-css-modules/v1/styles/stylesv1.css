@@ -1,9 +1,15 @@
-._widgetSize_1b2tl {
+.widgetSize {
   width: 200px;
   height: 200px;
   font-size: 32px;
   display: -ms-flexbox;
   display: flex; }
 
-._alertBox_1b2tl {
+.alertBox {
   border: 1px solid black; }
+
+.fooStyle {
+  background-color: blue; }
+
+.barStyle {
+  text-decoration: line-through; }
